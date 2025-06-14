@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #800000 0%, #B22222 50%, #8B0000 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 12px 30px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+a{
+    text-decoration: none;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: rgba(255,255,255,0.9);
+    color: #800000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.login-signup-content{
+    display: none;
+}
+
+.login-signup-content.active{
+    display: block;
+}
+
+.dashboard-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.login-signup-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card-login-signup{
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+    width: 85vh;
+}
+
+.login-signup-button{
+    background: #800000;
+    color: #fff;
+}
+
+
+.tank-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+    gap: 10px;
+}
+
+.tank {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #800000;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    background: linear-gradient(to bottom, #e0f2fe 0%, #b3e5fc 100%);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(128, 0, 0, 0.3);
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #1976d2, #42a5f5, #81d4fa);
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 0 16px 16px;
+}
+
+.water::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50px;
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateX(-10px) scaleX(1); }
+    50% { transform: translateX(10px) scaleX(1.1); }
+}
+
+.water-level-display {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.tank-labels {
+    position: absolute;
+    right: -60px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pump-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.pump-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
