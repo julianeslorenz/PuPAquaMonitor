@@ -54,9 +54,10 @@ body {
     backdrop-filter: blur(10px);
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 
 .tab-btn.active,
 .tab-btn:hover {

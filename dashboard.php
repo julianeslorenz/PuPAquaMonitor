@@ -14,72 +14,18 @@
         <div class="nav-tabs">
             <button class="tab-btn active" onclick="switchTab('monitoring')">Water Monitoring</button>
             <button class="tab-btn" onclick="switchTab('statistics')">Statistics</button>
-            <a href="#" class="tab-btn" role="button">Logout</a>
+            <a href="#" class="tab-btn" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                Logout
+            </a>
         </div>
 
-        <!-- Water Monitoring -->
-        <div id="monitoring" class="tab-content active">
-            <div class="dashboard-grid">
-                <div class="card">
-                    <h2 style="text-align: center; margin-bottom: 20px; color: #333;">Virtual Water Tank</h2>
-                    <div class="tank-container">
-                        <div class="tank">
-                            <div class="water" id="waterLevel"></div>
-                            <div class="water-level-display" id="levelDisplay">75%</div>
-                            <div class="tank-labels">
-                                <span>100%</span>
-                                <span>75%</span>
-                                <span>50%</span>
-                                <span>25%</span>
-                                <span>0%</span>
-                            </div>
-                        </div>
+        <?php
+            require __DIR__ . '/../PuPAquaMonitor/water_level_monitor.php';
+            require __DIR__ . '/../PuPAquaMonitor/statistic.php';
+        ?>
 
-                        <div class="tank">
-                            <div class="water" id="waterLevel"></div>
-                            <div class="water-level-display" id="levelDisplay">75%</div>
-                            <div class="tank-labels">
-                                <span>100%</span>
-                                <span>75%</span>
-                                <span>50%</span>
-                                <span>25%</span>
-                                <span>0%</span>
-                            </div>
-                        </div>
-
-                        <div class="tank">
-                            <div class="water" id="waterLevel"></div>
-                            <div class="water-level-display" id="levelDisplay">75%</div>
-                            <div class="tank-labels">
-                                <span>100%</span>
-                                <span>75%</span>
-                                <span>50%</span>
-                                <span>25%</span>
-                                <span>0%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="pump-status">
-                        <div class="pump-icon pump-on" id="pumpIcon">⚡</div>
-                        <span id="pumpStatus">Pump: RUNNING</span>
-                    </div>
-
-                    <div class="alert" id="alertBox">
-                        <strong>⚠️ Warning:</strong> <span id="alertMessage"></span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="statistics" class="tab-content">
-            <div class="dashboard-grid">
-                <div class="card">
-
-                </div>
-            </div>
-        </div>
+        
     </div>
 </body>
 <script src="script.js"></script>
