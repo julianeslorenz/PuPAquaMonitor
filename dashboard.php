@@ -1,9 +1,15 @@
+<?php
+require_once __DIR__ . '/db_connection.php';
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
@@ -14,19 +20,20 @@
         <div class="nav-tabs">
             <button class="tab-btn active" onclick="switchTab('monitoring')">Water Monitoring</button>
             <button class="tab-btn" onclick="switchTab('statistics')">Statistics</button>
+            <button class="tab-btn" onclick="switchTab('settings')">Settings</button>
             <a href="#" class="tab-btn" role="button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
                 Logout
             </a>
         </div>
-
         <?php
             require __DIR__ . '/../PuPAquaMonitor/water_level_monitor.php';
             require __DIR__ . '/../PuPAquaMonitor/statistic.php';
-        ?>
-
-        
+            require __DIR__ . '/../PupAquamonitor/setting.php';
+        ?>  
     </div>
 </body>
 <script src="script.js"></script>
+<script src="path/to/chartjs/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </html>

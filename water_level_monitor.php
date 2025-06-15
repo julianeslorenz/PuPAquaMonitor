@@ -1,7 +1,7 @@
 <!-- Water Monitoring -->
 <div id="monitoring" class="tab-content active">
     <div class="dashboard-grid">
-        <div class="card">
+        <div class="card-container">
             <h2 style="text-align: center; margin-bottom: 20px; color: #333;">Virtual Water Tank</h2>
             <div class="tank-container">
                 <div class="tank">
